@@ -1,8 +1,93 @@
 <html>
 <head>
 	<title>MODULE-EIGHT</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <h1>M8</h1>
+<div class="main">
+ <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="#" id="home">M8</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" id='box-search' placeholder="Movie search">
+      </div>
+      <button type="button" class="btn btn-primary" id='btn-submit'>
+        <span class="glyphicon glyphicon-search"></span>
+      </button>
+    </form>
+  <div class="links">
+    <ul class="nav navbar-nav navbar-right" id="movie-links">
+      <li><a href="#/upcomingmovies" id="upcoming_movies">Upcoming Movies</a></li>
+      <li><a href="#/intheater"  id="in_theater">In Theater</a></li>
+      <li><a href="#/boxofficehit" id="box-office">Box Office Hit</a></li>
+      <li><a href="#/openingmovies" id="opening_movies">Opening Movies</a></li>
+    </ul>
+ </nav>
+</div>
+  <div class="middiv"></div>
+      <div class = "result">
+      <div class="jumbotron">
+         <div class="container">
+          <h1>Welcome!!!</h1>
+          <p> A movie search engine powered by DanZel in cooperation with Rotten Tomatoes</p>
+         </div>
+       </div>
+      </div>
+ <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  @ DanZel..... All rights reserved 2013
+</nav>
+  <script id="tpl-searchresult" type="text/x-handlebars-template">
+     <div class="page-header">
+     <h1>Found results:</h1>
+     </div>
+  </script>
+  <script id="tpl-boxoffice" type="text/x-handlebars-template">
+     <div class="page-header">
+     <h1>Box Office Hits</h1>
+     </div>
+  </script>
+   <script id="tpl-intheater" type="text/x-handlebars-template">
+     <div class="page-header">
+     <h1>In Theater</h1>
+     </div>
+  </script>
+   <script id="tpl-upcoming" type="text/x-handlebars-template">
+     <div class="page-header">
+     <h1>Upcoming Movies</h1>
+     </div>
+  </script>
+   <script id="tpl-opening" type="text/x-handlebars-template">
+     <div class="page-header">
+     <h1>Opening Movies</h1>
+     </div>
+  </script>
+  <script id="tpl-movie" type="text/x-handlebars-template">
+            <div class="col-sm-6 col-md-3">
+               <div class="thumbnail">
+                  <img src="{{this.posters.profile}}" id='thumb'/>
+                  <div class="caption">
+                    <h1>{{title}} ({{year}}) <span class='label label-warning'>{{mpaa_rating}}</span></h1> 
+                    <div class='rate_audience'>
+                    <span class="label label-default">Audience Score:</span>
+                    <span class="label label-info">{{ratings.audience_score}}</span>
+                    </div>
+                    <div class='rate_critics'>
+                    <span class="label label-default">Critics Score:</span>
+                    <span class="label label-info">{{ratings.critics_score}}</span>
+                    </div>
+                  </div>
+              </div>
+           </div>
+    </script>  
+    <script src="bootstrap/js/bootstrap.js"></script>
+     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/apps.js"></script>
 </body>
 </html>
